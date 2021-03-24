@@ -11,7 +11,12 @@ const image1 = require('../assets/fontIme.png')
 const image2 = require('../assets/fontBleu.png')
 const image3 = require('../assets/fontrace.png')
 const [isSelected, setSelection] = useState(false);
-const [modInscri, setModInscri] = useState(false);
+const [addrCo,setAddrCo]=useState('')
+const [paswd,setPaswd]=useState('')
+const [error1,setError1]=useState(false)
+const [error2,setError2]=useState(false)
+
+
 
 const [isMod, setIsMod] = useState(true);
 useEffect(()=>{
@@ -20,14 +25,50 @@ useEffect(()=>{
   }, 1500);
 })
 
+useEffect(()=>{
+  setTimeout(() => {
+    setError1(false)
+    setError2(false)
+  }, 3000);
+})
+
+ 
+
+const handleConnexion=()=>{
+    if (addrCo==="" || paswd==="")
+    {
+      setError1(true)
+      setPaswd('')
+      setAddrCo('')
+    }
+    else if(addrCo!=="toure" || paswd!=="papamaman")
+    {
+      setError2(true)
+      setPaswd('')
+      setAddrCo('')
+    }
+    else{
+      navigation.navigate('ScreenDrawer')
+    }
+    
+
+}
+
+const handleInscription=()=>{
+  navigation.navigate('Inscription')
+}
+
+
+
+
 
     return (
        <View style={styles.container}>
 
         <StatusBar
-       barStyle="light-content"
-       backgroundColor="#1F4F4F"
-       showHideTransition="slide"
+          barStyle="light-content"
+          backgroundColor="#1F4F4F"
+          showHideTransition="slide"
        />
        <Modal visible={isMod} >
           <Debut/>
@@ -46,17 +87,33 @@ useEffect(()=>{
                         <Text style={{color:'#FFFFFF',fontFamily:'Segoe UI',fontSize:30,marginBottom:20}} >Connexion</Text> 
 
                     </View>
-                <View style={{borderBottomWidth:1, borderColor:'white',flexDirection:'row'}}>
-                  <Image source={require('../assets/mail.png')} style={{width:19 ,height:16,marginTop:18}}/>                       
+                <View style={styles.viewInput}>
+                  <Image source={require('../assets/mail.png')} style={styles.inputLogin}/>                       
 
-                   <TextInput placeholder="E-mail | Nom d'utilisateur" placeholderTextColor="#FFFFFF7F" style={{paddingLeft:15}}/>
+                   <TextInput 
+                      placeholder="E-mail | Nom d'utilisateur" 
+                      placeholderTextColor="#FFFFFF7F" 
+                      style={{paddingLeft:15,color:'white'}} 
+                      onChangeText={val=>setAddrCo(val)}
+                      value={addrCo}
+                   />
+                  
                  </View>
 
-                 <View style={{borderBottomWidth:1, borderColor:'white',flexDirection:'row'}}>
-                 <Image source={require('../assets/cadena.png')} style={{width:19 ,height:16,marginTop:18}}/>                       
+                 <View style={styles.viewInput}>
+                 <Image source={require('../assets/cadena.png')} style={styles.inputLogin}/>                       
 
-                    <TextInput placeholder="Mot de passe" placeholderTextColor="#FFFFFF7F" style={{paddingLeft:15}}/>
+                    <TextInput 
+                        placeholder="Mot de passe" 
+                        placeholderTextColor="#FFFFFF7F" 
+                        style={{paddingLeft:15,color:'white'}}
+                        onChangeText={text=>setPaswd(text)}
+                        value={paswd}
+                        secureTextEntry={true}
+                    />
+                   
                  </View>
+                <Text style={{color:'red'}}> {error1===true ? <Text >Champ Vide</Text>:<Text></Text>} {error2===true ? <Text>Information Incorrect</Text>:<Text></Text>}</Text>
                  <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:20}}>
                  <View style={{flexDirection:'row'}}>
                  
@@ -65,21 +122,21 @@ useEffect(()=>{
                           onValueChange={(newValue) => setSelection(newValue)}
                           tintColors={{ true: 'white', false: '#F1F1F1AF' }}
                           />
-                      <Text style={{marginTop: 5,color:'white'}}>Reste connecte</Text>
+                      <Text style={styles.textLogin}>Reste connecte</Text>
                       </View>
-                      <Text style={{marginTop: 5,color:'white',textDecorationLine: 'underline'}}>Mot de passe oublie?</Text>
+                      <Text style={[styles.textLogin,{textDecorationLine: 'underline'}]}>Mot de passe oublie?</Text>
 
                  </View>
                  
                  <View style={{alignItems:'center'}}>
 
-                    <TouchableOpacity style={{backgroundColor:'#216161', width:'90%', height:40, justifyContent:'center',borderRadius:30,marginTop:40}} onPress={()=>navigation.navigate('ScreenDrawer')}>
+                    <TouchableOpacity style={styles.btnLogin} onPress={handleConnexion}>
                         <Text style={{textAlign:'center',color:'white'}}>Connexion</Text>
                     </TouchableOpacity>
                   
                   <View style={{flexDirection:'row',marginTop:15}}>
                     <Text style={{color:'white',marginRight:15}}>Aucun compte?</Text>
-                    <Text style={{color:'white',textDecorationLine: 'underline'}} onPress={()=>navigation.navigate('Inscription')} >S'inscrire</Text>
+                    <Text style={{color:'white',textDecorationLine: 'underline'}} onPress={handleInscription} >S'inscrire</Text>
 
                   </View>
                  
@@ -108,8 +165,19 @@ const styles = StyleSheet.create({
     image: {
       flex: 1,  
       justifyContent:'center',
-      
-    
+
+    },
+    btnLogin:{
+      backgroundColor:'#216161', width:'90%', height:40, justifyContent:'center',borderRadius:30,marginTop:40
+    },
+    textLogin:{
+      marginTop: 5,color:'white'
+    },
+    inputLogin:{
+      width:19 ,height:16,marginTop:18
+    },
+    viewInput:{
+      borderBottomWidth:1, borderColor:'white',flexDirection:'row'
     }
   });
 export default Login;

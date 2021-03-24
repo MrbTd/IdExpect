@@ -4,13 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import MainTabScreen from '../screen/MainTabScreen'
 import DrawerContent from './DrawerContent'
 import Notification from '../screen/Notification'
-import Contact from '../screen/Contact'
-import Evenement from '../screen/Evenement'
-import Home from '../screen/Home'
-import Scan from '../screen/Scan'
-import Smart from '../screen/Smart'
-import Deconnexion from '../components/Deconnexion'
-import Login from '../components/Login'
+
 
 
 

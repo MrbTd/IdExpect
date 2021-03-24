@@ -33,6 +33,7 @@ function StackScreen() {
       <Stack.Screen name="Profil" component={Profil} />
       <Stack.Screen name="ModifProfil" component={ModifProfil} />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Evenement" component={Evenement} />
       <Stack.Screen name="Notification" component={Notification} />
       <Stack.Screen name="ScreenDrawer" component={ScreenDrawer} />
       <Stack.Screen name="ItemEvenement" component={ItemEvenement} />

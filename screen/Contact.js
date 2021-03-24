@@ -1,9 +1,11 @@
 import React from 'react';
 import { View ,Image, Text, StyleSheet, ScrollView} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native';
 
 function Contact(props) {
-    
+    const navigation=useNavigation()
     return (
         <View style={styles.containerContact}>
             <View style={[styles.centerBtn,{flexDirection:'row',justifyContent:'space-between'}]}>
@@ -18,43 +20,71 @@ function Contact(props) {
                 <View style={{margin:20,backgroundColor:'#A6DBDB',borderRadius:15,height:'81%'}}>
                     <ScrollView style={{margin:10}}>
                         <View style={styles.cardCenter}>
-                            
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
                             <View >
                                     <Text style={[,styles.cardView1,{borderTopLeftRadius:15}]}>CONTACT 1</Text> 
                                     <Text style={styles.cardView2}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={[,styles.cardView1,{borderTopRightRadius:15}]}>CONTACT 2</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 3</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 4</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 5</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 6</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 7</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 8</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 9</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 10</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
@@ -63,28 +93,42 @@ function Contact(props) {
                                     <Text style={styles.cardView1}>CONTACT 11</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 12</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 13</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 14</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10 }]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 15</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10, borderBottomLeftRadius:15}]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
-                            
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.navigate('Profil')}>
+
                             <View >
                                     <Text style={styles.cardView1}>CONTACT 16</Text> 
                                     <Text style={[styles.cardView2,{marginBottom:10, borderBottomRightRadius:15}]}>Sujet du message{'\n'}Lorem ipsum</Text>
                             </View>
-                            
+                            </TouchableOpacity>
                             
                             
                         </View>

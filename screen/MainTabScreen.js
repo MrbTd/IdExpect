@@ -9,8 +9,6 @@ import {Image, View} from 'react-native';
 import Smart from './Smart'
 import Scan from './Scan'
 import Evenement from './Evenement'
-import StackEvenemet from './StackEvenemet'
-
 import Contact from './Contact'
 import Home from './Home'
 import { TouchableOpacity } from 'react-native-gesture-handler';

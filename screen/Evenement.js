@@ -1,10 +1,9 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { View ,Image, Text, StyleSheet, FlatList, StatusBar, TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import { useState } from 'react/cjs/react.development';
 
-function Contact({navigation}) {
+function Evenement({navigation}) {
     const [part,setPart]=useState(true)
     const evene=[
         {
@@ -125,7 +124,7 @@ function Contact({navigation}) {
 
                                         <View style={{paddingHorizontal:18,marginRight:50,}}>
                                             <TouchableOpacity style={{backgroundColor:'#08AAAA',width:wp('45%'),borderRadius:10,top:hp('-1%'),left:wp('15%')}} onPress={()=>setPart(!part)}>
-                                            <Text style={{textAlign:'center',color:'#fffff1',}}>{!part? 'Je participe plus':'Participer'}</Text>
+                                            <Text style={{textAlign:'center',color:'#fffff1',}}>{part? 'Participer':'Je participe plus'}</Text>
                                             </TouchableOpacity>
 
                                             <Text style={{color:'white',opacity:0.8}}>{item.tit}</Text>
@@ -173,4 +172,4 @@ const styles=StyleSheet.create({
 
 })
 
-export default Contact;
+export default Evenement;

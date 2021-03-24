@@ -5,7 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 
-function ItemEvenement({route,navigation}) {
+function ItemEvenement({route}) {
     const [part,setPart]=useState(true)
 
     
